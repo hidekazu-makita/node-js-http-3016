@@ -70,7 +70,9 @@ const server = http
     console.error(`[${new Date()}] Server Error`, e);
   })
   .on('clientError', e => {
-    const port = process.env.PORT || 8000;
+    console.error(`[${new Date()}] Client Error`, e);
+  });
+  const port = process.env.PORT || 8000;
 server.listen(port, () => {
   console.info(`[${new Date()}] Listening on ${port}`);
 });
